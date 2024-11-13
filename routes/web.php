@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoanDetailsController;
 use App\Http\Controllers\Admin\ProcessController;
+use App\Http\Controllers\EmiDetailsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,5 +37,6 @@ Route::get('/admin', function () {
 
 Route::get('/loan-details', [LoanDetailsController::class, 'index'])->name('loan.details');
 Route::get('/process-data', [ProcessController::class, 'processData'])->name('admin.processData');
+Route::get('/emi-data', [EmiDetailsController::class, 'processData'])->name('admin.emiData');
 
 require __DIR__.'/auth.php';
