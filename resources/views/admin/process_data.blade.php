@@ -3,7 +3,7 @@
     <!-- <button id="processDataBtn" class="btn btn-primary">
         Process Data
     </button> -->
-    <a href="{{ route('admin.emiData') }}" class="btn btn-primary">
+    <a href="{{ route('emiDetails.process') }}" class="btn btn-primary">
         Process Data
     </a>
 </div>

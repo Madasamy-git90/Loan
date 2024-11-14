@@ -35,8 +35,11 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('admin');
 
-Route::get('/loan-details', [LoanDetailsController::class, 'index'])->name('loan.details');
-Route::get('/process-data', [ProcessController::class, 'processData'])->name('admin.processData');
-Route::get('/emi-data', [EmiDetailsController::class, 'processData'])->name('admin.emiData');
+Route::middleware('auth')->group(function () {
+    Route::get('/loan-details', [LoanDetailsController::class, 'index'])->name('loan.details');
+    Route::get('/process-data', [ProcessController::class, 'processData'])->name('admin.processData');
+    Route::get('/emi-data', [EmiDetailsController::class, 'processData'])->name('emiDetails.process');
+    Route::get('/emi-details', [EmiDetailsController::class, 'index'])->name('emiDetails.index');
+});
 
 require __DIR__.'/auth.php';
