@@ -103,7 +103,7 @@
     <p>Hello, {{ Auth::user()->name }}!</p>
     <ul>
         <li><a href="{{ route('loan.details') }}">Loan Details</a></li>
-        <li><a href="{{ route('admin.processData') }}">Process Page</a></li>
+        <li><a href="{{ route('processData') }}">Process Page</a></li>
     </ul>
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
